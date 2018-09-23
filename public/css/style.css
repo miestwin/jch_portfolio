@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Flamenco');
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: 'Flamenco', cursive;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.app-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.header-brand {
+    display: none;
+}
+
+.header-nav {
+    flex: 1;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    margin: 0 20px;
+}
+
+.nav-item a {
+    color: #999;
+    font-weight: 600;
+    transition: 150ms ease-in-out;
+}
+
+.nav-item a:hover {
+    color: #000;
+}
+
+.header-social {
+    display: none;
+}
+
+@media (min-width: 750px) {
+    .app-header {
+        height: 5rem;
+        padding-left: 40px;
+        padding-right: 40px; 
+    }
+
+    .header-brand {
+        display: block;
+    }
+
+    .header-nav {
+        margin: 0 150px 0 150px;
+    }
+
+    .nav-menu {
+        justify-content: flex-end;
+    }
+
+    .header-social {
+        display: flex;
+    }
+}
+
