@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Flamenco');
+@import "./logo.css";
 
 *,
 *:after,
@@ -11,6 +12,7 @@ body {
     font-family: 'Flamenco', cursive;
     margin: 0;
     padding: 0;
+    background-color: #1f1c1c;
 }
 
 a {
@@ -28,10 +30,16 @@ a {
     align-items: center;
     padding-left: 10px;
     padding-right: 10px;
+    background-color: white;
 }
 
 .header-brand {
     display: none;
+}
+
+.header-brand a {
+    font-size: 50px;
+    color: #000;
 }
 
 .header-nav {
@@ -64,11 +72,22 @@ a {
     display: none;
 }
 
+.social-link {
+    color: #999;
+    margin-left: 20px;
+    font-weight: 600;
+    transition: 150ms ease-in-out;
+}
+
+.social-link:hover {
+    color: #000;
+}
+
 @media (min-width: 750px) {
     .app-header {
         height: 5rem;
-        padding-left: 40px;
-        padding-right: 40px; 
+        padding-left: 60px;
+        padding-right: 60px; 
     }
 
     .header-brand {
@@ -76,7 +95,7 @@ a {
     }
 
     .header-nav {
-        margin: 0 150px 0 150px;
+        margin: 0 100px 0 100px;
     }
 
     .nav-menu {
