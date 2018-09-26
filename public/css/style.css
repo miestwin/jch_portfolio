@@ -13,10 +13,18 @@ body {
     margin: 0;
     padding: 0;
     background-color: #1f1c1c;
+    height: 100%;
 }
 
 a {
     text-decoration: none;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
 }
 
 .app-header {
@@ -31,6 +39,18 @@ a {
     padding-left: 10px;
     padding-right: 10px;
     background-color: white;
+}
+
+.app-main {
+    padding-top: 3rem;
+    flex: 1;
+}
+
+.app-footer {
+    display: flex;
+    justify-content: center;
+    padding: 20px 10px;
+    font-size: 12px;
 }
 
 .header-brand {
@@ -60,8 +80,7 @@ a {
 
 .nav-item a {
     color: #999;
-    font-weight: 600;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     transition: 150ms ease-in-out;
 }
 
@@ -80,8 +99,27 @@ a {
     transition: 150ms ease-in-out;
 }
 
-.social-link:hover {
-    color: #000;
+.footer-links {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.footer-link {
+    margin-left: 20px;
+    color: #999;
+    text-transform: uppercase;
+}
+
+.footer-link span {
+    margin-right: 8px;
+}
+
+.facebook:hover {
+    color: #3b5998
+}
+
+.instagram:hover {
+    color: #8a3ab9;
 }
 
 @media (min-width: 750px) {
@@ -89,6 +127,14 @@ a {
         height: 5rem;
         padding-left: 60px;
         padding-right: 60px; 
+    }
+
+    .app-main {
+        padding-top: 5rem;
+    }
+
+    .app-footer {
+        padding: 20px 60px;
     }
 
     .header-brand {
