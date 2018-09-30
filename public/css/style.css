@@ -129,8 +129,8 @@ a {
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    grid-auto-rows: 300px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: 200px;
     grid-gap: 10px;
 }
 
@@ -286,7 +286,7 @@ a {
     }
 
     .gallery {
-        grid-gap: 20px;
+        grid-gap: 40px;
     }
 }
 
