@@ -3,6 +3,8 @@ const path = require('path');
 
 const app = express();
 
+const PORT = process.env.PORT || 8000;
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -16,4 +18,4 @@ app.get('/about', (req, res) => res.sendFile(path.join(viewsDir, 'about.html')))
 app.get('/contact', (req, res) => res.sendFile(path.join(viewsDir, 'contact.html')));
 app.get('/admin', (req, res) => res.sendFile(path.join(viewsDir, 'admin.html')));
 
-app.listen(8000, () => console.log('Listening on port 8000!'));
+app.listen(PORT, () => console.log(`Listening on port ${PORT}!`));
