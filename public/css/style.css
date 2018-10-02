@@ -36,6 +36,7 @@ a {
     height: 3rem;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     padding-left: 10px;
     padding-right: 10px;
     background-color: white;
@@ -67,11 +68,13 @@ a {
 
 .header-nav {
     flex: 1;
+    margin: 0 100px 0 20px;
+    display: none;
 }
 
 .nav-menu {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -104,6 +107,106 @@ a {
     margin-left: 20px;
     font-weight: 600;
     transition: 150ms ease-in-out;
+}
+
+.hamburger {
+    position: relative;
+    outline: none;
+    border: none;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    padding: 6px;
+    display: inline-block;
+}
+
+.hamburger-box {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    position: relative;
+}
+
+.hamburger-inner,
+.hamburger-inner:before,
+.hamburger-inner:after {
+    width: 20px;
+    height: 2px;
+    background-color: #999;
+    border-radius: 2px;
+    position: absolute;
+}
+
+.hamburger-inner:before,
+.hamburger-inner:after {
+    content: "";
+    display: block;
+}
+
+.hamburger-inner {
+    display: block;
+    top: 50%;
+    margin-top: -1px;
+}
+
+.hamburger-inner:before {
+    top: -6px;
+}
+
+.hamburger-inner:after {
+    bottom: -6px;
+}
+
+.app-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1050;
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    font-size: 20px;
+}
+
+.app-menu.visible {
+    display: flex;
+}
+
+.app-menu .nav-menu {
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu-nav-item {
+    margin-bottom: 30px;
+}
+
+.menu-nav-item a {
+    color: #000;
+    letter-spacing: 2px;
+    transition: 150ms ease-in-out;
+}
+
+.menu-social-link {
+    color: #000;
+    display: block;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.app-menu-close {
+    margin: 20px 20px 50px 20px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    align-self: flex-end;
+    font-size: inherit;
 }
 
 .footer-links {
@@ -327,7 +430,8 @@ a {
     .app-header {
         height: 5rem;
         padding-left: 60px;
-        padding-right: 60px; 
+        padding-right: 60px;
+        justify-content: flex-start;
     }
 
     .app-main {
@@ -341,15 +445,19 @@ a {
     }
 
     .header-nav {
-        margin: 0 100px 0 20px;
+        display: inline-block;
     }
 
-    .nav-menu {
+    /* .nav-menu {
         justify-content: flex-end;
-    }
+    } */
 
     .header-social {
         display: flex;
+    }
+
+    .hamburger {
+        display: none;
     }
 
     .gallery {
