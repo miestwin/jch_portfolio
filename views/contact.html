@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Jakub Chełstowski</title>
+        <title>Jakub Chełstowski Portfolio</title>
         <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
@@ -32,7 +32,7 @@
                             <a href="/about">O MNIE</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/contact">KONTAKT</a>
+                            <a href="/contact" class="active">KONTAKT</a>
                         </li>
                     </ul>
                 </nav>
@@ -46,7 +46,27 @@
                 </div>
             </header>
             <main class="app-main">
-                
+                <section class="contact">
+                    <header class="contact-header">
+                        <!-- <h2>Kontakt</h2> -->
+                        <p>Wyślij mi wiadomość e-mail bezpośrednio na adres <a href="mailto:jakub.chelstowski12@wp.pl">jakub.chelstowski12@wp.pl</a> lub skorzystaj z formularza.</p>
+                    </header>
+                    <form class="contact-form">
+                        <div class="form-item">
+                            <label>Imię i Nazwisko</label>
+                            <input type="text" name="name">
+                        </div>
+                        <div class="form-item">
+                            <label>E-mail</label>
+                            <input type="email" name="email">
+                        </div>
+                        <div class="form-item">
+                            <label>Wiadomość</label>
+                            <textarea></textarea>
+                        </div>
+                        <button type="submit">Wyślij</button>
+                    </form>
+                </section>
             </main>
             <footer class="app-footer">
                 <div class="footer-links">

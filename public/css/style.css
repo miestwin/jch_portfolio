@@ -87,6 +87,10 @@ a {
     transition: 150ms ease-in-out;
 }
 
+.nav-item a.active {
+    color: #000000;
+}
+
 .nav-item a:hover {
     color: #000;
 }
@@ -254,6 +258,69 @@ a {
 .item:hover .item-overlay:after {
     transform: skew(-30deg) translateX(-30%);
     transition-delay: 0.1s;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+
+.contact-header {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.contact-header a {
+    color: #999;
+}
+
+.contact-header a:hover {
+    text-decoration: underline;
+}
+
+.contact-form {
+    width: 400px;
+    max-width: 100%;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background-color: transparent;
+    border: 3px solid #fff;
+    outline: none;
+    padding: 7px;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.contact-form textarea {
+    height: 150px;
+}
+
+.contact-form button {
+    width: 100%;
+    color: #000000;
+    padding: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-item label {
+    margin-bottom: 10px;
 }
 
 @media (min-width: 750px) {
