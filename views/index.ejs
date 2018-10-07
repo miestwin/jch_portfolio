@@ -77,6 +77,12 @@
                 </div>
             </aside>
             <main class="app-main">
+                <!-- <div class="overlay">
+                    <div class="overlay-inner">
+                        <button class="overlay-close">x</button>
+                        <img>
+                    </div>
+                </div> -->
                 <section class="gallery">
                     <div class="item">
                         <img src="images/gallery/citroen-DS.jpg" alt="Citroen DS">
@@ -164,9 +170,19 @@
             </footer>
         </div>
         <script>
+            const gallery = document.querySelector('.gallery');
+            // const overlay = document.querySelector('.overlay');
+            // const overlayImage = overlay.querySelector('img');
+            // const overlayCloseBtn = overlay.querySelector('button.overlay-close');
             const hamburgerBtn = document.querySelector('button.hamburger');
             const menuCloseBtn = document.querySelector('button.app-menu-close');
             const menuAside = document.querySelector('aside.app-menu');
+
+            // function handleImageClick(e) {
+            //     const src = e.currentTarget.querySelector('img').src;
+            //     overlayImage.src = src;
+            //     overlay.classList.add('open');
+            // }
 
             hamburgerBtn.addEventListener('click', function() {
                 menuAside.classList.add('visible');
@@ -175,6 +191,13 @@
             menuCloseBtn.addEventListener('click', function() {
                 menuAside.classList.remove('visible');
             });
+
+            // overlayCloseBtn.addEventListener('click', function () {
+            //     overlay.classList.remove('open');
+            // });
+
+            // const items = document.querySelectorAll('.item');
+            // items.forEach(item => item.addEventListener('click', handleImageClick));
         </script>
     </body>
 </html>
