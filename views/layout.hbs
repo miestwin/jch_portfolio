@@ -20,19 +20,18 @@
                 <div class="header-brand">
                     <a href="/" title="Jakub Chełstowski Portfolio">
                         <span class="l-icon l-jch"></span>
-                        <!-- <img src="images/favicon/favicon-32x32.png" alt="Jakub Chełstowski Portfolio"> -->
                     </a>
                 </div>
                 <nav class="header-nav">
                     <ul class="nav-menu">
                         <li class="nav-item">
-                            <a href="/">PRACA</a>
+                            <a href="/" class="{{#if work}}active{{/if}}">PRACA</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/about">O MNIE</a>
+                            <a href="/about" class="{{#if about}}active{{/if}}">O MNIE</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/contact" class="active">KONTAKT</a>
+                            <a href="/contact" class="{{#if contact}}active{{/if}}">KONTAKT</a>
                         </li>
                     </ul>
                 </nav>
@@ -77,27 +76,7 @@
                 </div>
             </aside>
             <main class="app-main">
-                <section class="contact">
-                    <header class="contact-header">
-                        <!-- <h2>Kontakt</h2> -->
-                        <p>Wyślij mi wiadomość e-mail bezpośrednio na adres <a href="mailto:jakub.chelstowski12@wp.pl">jakub.chelstowski12@wp.pl</a> lub skorzystaj z formularza.</p>
-                    </header>
-                    <form class="contact-form">
-                        <div class="form-item">
-                            <label>Imię i Nazwisko</label>
-                            <input type="text" name="name">
-                        </div>
-                        <div class="form-item">
-                            <label>E-mail</label>
-                            <input type="email" name="email">
-                        </div>
-                        <div class="form-item">
-                            <label>Wiadomość</label>
-                            <textarea></textarea>
-                        </div>
-                        <button type="submit">Wyślij</button>
-                    </form>
-                </section>
+                {{{body}}}
             </main>
             <footer class="app-footer">
                 <div class="footer-links">
@@ -113,6 +92,7 @@
             </footer>
         </div>
         <script>
+            const gallery = document.querySelector('.gallery');
             const hamburgerBtn = document.querySelector('button.hamburger');
             const menuCloseBtn = document.querySelector('button.app-menu-close');
             const menuAside = document.querySelector('aside.app-menu');
