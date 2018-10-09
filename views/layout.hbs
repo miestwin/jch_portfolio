@@ -12,7 +12,7 @@
         <link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#5bbad5">
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="theme-color" content="#ffffff">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
     </head>
     <body>
         <div class="app">
@@ -25,7 +25,7 @@
                 <nav class="header-nav">
                     <ul class="nav-menu">
                         <li class="nav-item">
-                            <a href="/" class="{{#if work}}active{{/if}}">PRACA</a>
+                            <a href="/" class="{{#if works}}active{{/if}}">PRACA</a>
                         </li>
                         <li class="nav-item">
                             <a href="/about" class="{{#if about}}active{{/if}}">O MNIE</a>
@@ -92,7 +92,6 @@
             </footer>
         </div>
         <script>
-            const gallery = document.querySelector('.gallery');
             const hamburgerBtn = document.querySelector('button.hamburger');
             const menuCloseBtn = document.querySelector('button.app-menu-close');
             const menuAside = document.querySelector('aside.app-menu');
