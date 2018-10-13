@@ -1,21 +1,36 @@
 <section class="contact">
     <header class="contact-header">
-        <!-- <h2>Kontakt</h2> -->
         <p>Wyślij mi wiadomość e-mail bezpośrednio na adres <a href="mailto:jakub.chelstowski12@wp.pl">jakub.chelstowski12@wp.pl</a> lub skorzystaj z formularza.</p>
     </header>
-    <form class="contact-form">
+    <form action method="POST" class="contact-form">
         <div class="form-item">
-            <label>Imię i Nazwisko</label>
-            <input type="text" name="name">
+            <label for="name">Imię i Nazwisko</label>
+            <input type="text" id="name" name="name" required>
         </div>
         <div class="form-item">
-            <label>E-mail</label>
-            <input type="email" name="email">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required>
         </div>
         <div class="form-item">
-            <label>Wiadomość</label>
-            <textarea></textarea>
+            <label for="message">Wiadomość</label>
+            <textarea id="message" name="message" required></textarea>
         </div>
-        <button type="submit">Wyślij</button>
+        <button type="submit" class="btn-submit">
+            Wyślij
+            <span class="l-icon l-spinner spinner"></span>
+            {{#if success}}
+            <span class="l-icon l-checkmark text-success"></span>
+            {{/if}}
+            {{#if error}}
+            <span class="l-icon l-cross text-danger"></span>
+            {{/if}}
+        </button>
     </form>
+    <script>
+        const spinner = document.querySelector('.btn-submit .spinner');
+        const contactForm =document.querySelector('.contact-form');
+        contactForm.addEventListener('submit', function () {
+            spinner.classList.add('visible');
+        });
+    </script>
 </section>

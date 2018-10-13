@@ -20,6 +20,27 @@ a {
     text-decoration: none;
 }
 
+.text-success {
+    color: #00ff00;
+}
+
+.text-danger {
+    color: #ff0000;
+}
+
+.spinner {
+    display: none;
+    animation: spin 1s infinite linear;
+}
+.spinner.visible {
+    display: inline-block;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 .app {
     display: flex;
     flex-direction: column;

@@ -1,75 +1,163 @@
 @font-face {
-  font-family: 'logo';
-  src:  url('../fonts/logo.eot?xcsazf');
-  src:  url('../fonts/logo.eot?xcsazf#iefix') format('embedded-opentype'),
-    url('../fonts/logo.ttf?xcsazf') format('truetype'),
-    url('../fonts/logo.woff?xcsazf') format('woff'),
-    url('../fonts/logo.svg?xcsazf#logo') format('svg');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'logo';
+    src:  url('../fonts/logo.eot?7ao16t');
+    src:  url('../fonts/logo.eot?7ao16t#iefix') format('embedded-opentype'),
+      url('../fonts/logo.ttf?7ao16t') format('truetype'),
+      url('../fonts/logo.woff?7ao16t') format('woff'),
+      url('../fonts/logo.svg?7ao16t#logo') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
-
-.l-icon {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'logo' !important;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
   
-  /* Enable Ligatures ================ */
-  letter-spacing: 0;
-  -webkit-font-feature-settings: "liga";
-  -moz-font-feature-settings: "liga=1";
-  -moz-font-feature-settings: "liga";
-  -ms-font-feature-settings: "liga" 1;
-  font-feature-settings: "liga";
-  -webkit-font-variant-ligatures: discretionary-ligatures;
-  font-variant-ligatures: discretionary-ligatures;
-
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
+.l-icon {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'logo' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    
+    /* Enable Ligatures ================ */
+    letter-spacing: 0;
+    -webkit-font-feature-settings: "liga";
+    -moz-font-feature-settings: "liga=1";
+    -moz-font-feature-settings: "liga";
+    -ms-font-feature-settings: "liga" 1;
+    font-feature-settings: "liga";
+    -webkit-font-variant-ligatures: discretionary-ligatures;
+    font-variant-ligatures: discretionary-ligatures;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
 .l-jch:before {
-  content: "\e900";
+    content: "\e900";
 }
-.l-google-plus:before {
-  content: "\ea8b";
+.l-home:before {
+    content: "\e901";
 }
-.l-google-plus2:before {
-  content: "\ea8c";
+.l-spinner:before {
+    content: "\e97a";
 }
-.l-google-plus3:before {
-  content: "\ea8d";
+.l-spinner3:before {
+    content: "\e97c";
+}
+.l-spinner6:before {
+    content: "\e97f";
+}
+.l-spinner7:before {
+    content: "\e980";
+}
+.l-spinner8:before {
+    content: "\e981";
+}
+.l-contrast:before {
+    content: "\e9d5";
+}
+.l-star-empty:before {
+    content: "\e9d7";
+}
+.l-star-half:before {
+    content: "\e9d8";
+}
+.l-star-full:before {
+    content: "\e9d9";
+}
+.l-warning:before {
+    content: "\ea07";
+}
+.l-notification:before {
+    content: "\ea08";
+}
+.l-question:before {
+    content: "\ea09";
+}
+.l-info:before {
+    content: "\ea0c";
+}
+.l-cancel-circle:before {
+    content: "\ea0d";
+}
+.l-cross:before {
+    content: "\ea0f";
+}
+.l-checkmark:before {
+    content: "\ea10";
+}
+.l-mail:before {
+    content: "\ea83";
+}
+.l-mail2:before {
+    content: "\ea84";
+}
+.l-mail3:before {
+    content: "\ea85";
+}
+.l-mail4:before {
+    content: "\ea86";
+}
+.l-google:before {
+    content: "\ea88";
+}
+.l-google2:before {
+    content: "\ea89";
+}
+.l-google3:before {
+    content: "\ea8a";
+}
+.l-hangouts:before {
+    content: "\ea8e";
+}
+.l-google-drive:before {
+    content: "\ea8f";
 }
 .l-facebook:before {
-  content: "\ea90";
+    content: "\ea90";
 }
 .l-facebook2:before {
-  content: "\ea91";
+    content: "\ea91";
 }
 .l-instagram:before {
-  content: "\ea92";
+    content: "\ea92";
 }
 .l-twitter:before {
-  content: "\ea96";
+    content: "\ea96";
+}
+.l-rss:before {
+    content: "\ea9b";
+}
+.l-rss2:before {
+    content: "\ea9c";
+}
+.l-youtube:before {
+    content: "\ea9d";
 }
 .l-dribbble:before {
-  content: "\eaa7";
+    content: "\eaa7";
 }
 .l-behance:before {
-  content: "\eaa8";
+    content: "\eaa8";
 }
 .l-behance2:before {
-  content: "\eaa9";
+    content: "\eaa9";
+}
+.l-github:before {
+    content: "\eab0";
 }
 .l-linkedin:before {
-  content: "\eac9";
+    content: "\eac9";
 }
 .l-linkedin2:before {
-  content: "\eaca";
+    content: "\eaca";
 }
+.l-pinterest:before {
+    content: "\ead1";
+}
+.l-pinterest2:before {
+    content: "\ead2";
+}
+  
