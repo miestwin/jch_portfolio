@@ -5,7 +5,7 @@ const router = express.Router();
  * GET main page
  */
 router.get('/', function (req, res ,next) {
-    res.render('index', { works: true })
+    res.render('index', { drawing: true });
 });
 
 module.exports = router;

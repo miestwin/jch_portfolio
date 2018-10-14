@@ -7,8 +7,7 @@ const createError = require('http-errors');
 
 const aboutController = require('./controllers/about');
 const contactController = require('./controllers/contact');
-const galleryController = require('./controllers/gallery');
-const workController = require('./controllers/work');
+const drawingController = require('./controllers/drawing');
 
 const app = express();
 
@@ -22,10 +21,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', galleryController);
+app.use('/', drawingController);
 app.use('/about', aboutController);
 app.use('/contact', contactController);
-app.use('/work', workController);
 
 app.use(function(req, res, next) {
     next(createError(404));
