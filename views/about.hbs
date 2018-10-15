@@ -1,4 +1,70 @@
+<style>
+.about {
+    flex: 1;
+    color: #ffffff;
+    max-width: 100%;
+    width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about h1 {
+    position: relative;
+    font-size: 30px;
+    letter-spacing: 3px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.about h1:before,
+.about h1:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 3px;
+    background-color: #ffffff;
+}
+
+.about h1:before {
+    left: 25%;
+}
+
+.about h1:after {
+    right: 25%;
+}
+
+.about__links {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.about__links__item {
+    margin-left: 20px;
+    color: #999;
+    text-transform: uppercase;
+}
+
+.about__links__item span {
+    margin-right: 8px;
+}
+</style>
 <section class="about">
-    <h1>Cześć. Nazywam się Jakub Chełstowski.</h1>
+    <h1>Jakub Chełstowski</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis eaque aliquam cupiditate tenetur expedita, temporibus qui in ab, eum laboriosam placeat modi excepturi ad voluptatem possimus odit repellat magnam ratione illo sed nisi eveniet maiores autem suscipit. Sunt odit ipsum praesentium temporibus quam accusamus natus quibusdam aspernatur exercitationem quia dolores numquam id deleniti illo similique totam quos ullam, debitis minus.</p>
+    <div class="about__links">
+        <a href="https://www.facebook.com/jachelstowski/" target="blank" class="about__links__item facebook">
+            <span class="l-icon l-facebook"></span>
+            FACEBOOK
+        </a>
+        <a href="https://www.instagram.com/chelstowski.jakub/" target="blank" class="about__links__item instagram">
+            <span class="l-icon l-instagram"></span>
+            INSTAGRAM
+        </a>
+    </div>
 </section>

@@ -16,30 +16,30 @@
     </head>
     <body>
         <div class="app">
-            <header class="app-header">
-                <div class="header-brand">
+            <header class="app__header">
+                <div class="header__brand">
                     <a href="/" title="Jakub Chełstowski Portfolio">
                         <span class="l-icon l-jch"></span>
                     </a>
                 </div>
-                <nav class="header-nav">
-                    <ul class="nav-menu">
-                        <li class="nav-item">
+                <nav class="header__nav">
+                    <ul>
+                        <li class="header__nav__item">
                             <a href="/" class="{{#if drawing}}active{{/if}}">RYSUNKI</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="header__nav__item">
                             <a href="/about" class="{{#if about}}active{{/if}}">O MNIE</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="header__nav__item">
                             <a href="/contact" class="{{#if contact}}active{{/if}}">KONTAKT</a>
                         </li>
                     </ul>
                 </nav>
-                <div class="header-social">
-                    <a href="https://www.facebook.com/jachelstowski/" target="blank" class="social-link facebook">
+                <div class="header__links">
+                    <a href="https://www.facebook.com/jachelstowski/" target="blank" class="header__links__item facebook">
                         <span class="l-icon l-facebook"></span>
                     </a>
-                    <a href="https://www.instagram.com/chelstowski.jakub/" target="blank" class="social-link instagram">
+                    <a href="https://www.instagram.com/chelstowski.jakub/" target="blank" class="header__links__item instagram">
                         <span class="l-icon l-instagram"></span>
                     </a>
                 </div>
@@ -49,52 +49,40 @@
                     </span>
                 </button>
             </header>
-            <aside class="app-menu">
-                <button type="button" class="app-menu-close">X</button>
-                <nav class="menu-nav">
-                    <ul class="nav-menu">
-                        <li class="menu-nav-item">
+            <aside class="app__aside">
+                <button type="button" class="aside__close">X</button>
+                <nav class="aside__nav">
+                    <ul>
+                        <li class="aside__nav__item">
                             <a href="/" class="">RYSUNKI</a>
                         </li>
-                        <li class="menu-nav-item">
+                        <li class="aside__nav__item">
                             <a href="/about">O MNIE</a>
                         </li>
-                        <li class="menu-nav-item">
+                        <li class="aside__nav__item">
                             <a href="/contact">KONTAKT</a>
                         </li>
                     </ul>
                 </nav>
-                <div class="menu-social">
-                    <a href="https://www.facebook.com/jachelstowski/" target="blank" class="menu-social-link facebook">
+                <div class="aside__links">
+                    <a href="https://www.facebook.com/jachelstowski/" target="blank" class="aside__links__item facebook">
                         <span class="l-icon l-facebook"></span>
                         FACEBOOK
                     </a>
-                    <a href="https://www.instagram.com/chelstowski.jakub/" target="blank" class="menu-social-link instagram">
+                    <a href="https://www.instagram.com/chelstowski.jakub/" target="blank" class="aside__links__item instagram">
                         <span class="l-icon l-instagram"></span>
                         INSTAGRAM
                     </a>
                 </div>
             </aside>
-            <main class="app-main">
+            <main class="app__main">
                 {{{body}}}
             </main>
-            <footer class="app-footer">
-                <div class="footer-links">
-                    <a href="https://www.facebook.com/jachelstowski/" target="blank" class="footer-link facebook">
-                        <span class="l-icon l-facebook"></span>
-                        FACEBOOK
-                    </a>
-                    <a href="https://www.instagram.com/chelstowski.jakub/" target="blank" class="footer-link instagram">
-                        <span class="l-icon l-instagram"></span>
-                        INSTAGRAM
-                    </a>
-                </div>
-            </footer>
         </div>
         <script>
-            const hamburgerBtn = document.querySelector('button.hamburger');
-            const menuCloseBtn = document.querySelector('button.app-menu-close');
-            const menuAside = document.querySelector('aside.app-menu');
+            var hamburgerBtn = document.querySelector('.app__header button.hamburger');
+            var menuCloseBtn = document.querySelector('.app__aside button.aside__close');
+            var menuAside = document.querySelector('.app__aside');
 
             hamburgerBtn.addEventListener('click', function() {
                 menuAside.classList.add('visible');
