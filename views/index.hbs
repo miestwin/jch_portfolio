@@ -47,82 +47,154 @@
 }
 
 .overlay--open {
-    display: grid;
+    display: none;
     align-items: center;
     justify-content: center;
 }
 
 .overlay__inner {
     background-color: #ffffff;
+    width: 700px;
     padding: 20px;
     position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.overlay__inner img {
+    max-width: 100%;
 }
 
 .overlay__close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: transparent;
-    outline: none;
-    border: none;
-    font-size: inherit;
     cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 16px;
+    color: #000000;
+    user-select: none;
+    transition: 0.2s ease;
+}
+
+.overlay__prev,
+.overlay__next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 16px;
+    color: #000000;
+    font-weight: bold;
+    font-size: 18px;
+    user-select: none;
+    transition: 0.2s ease;
+}
+
+.overlay__prev {
+    left: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.overlay__next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.overlay__close:hover,
+.overlay__prev:hover,
+.overlay__next:hover {
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 @media (min-width: 750px) {
     .gallery {
         grid-gap: 40px;
     }
+
+    .overlay--open {
+        display: grid;
+    }
 }
 </style>
 <section class="gallery">
     <div class="gallery__item">
-        <img src="/images/gallery/citroen-DS.jpg" alt="Citroen DS">
+        <img src="/images/gallery/citroen-DS.jpg" data-index="1" alt="Citroen DS">
     </div>
     <div class="gallery__item">
-        <img src="/images/gallery/dworek-z-lotu-ptaka.jpg" alt="Dworek z lotu ptaka">
+        <img src="/images/gallery/dworek-z-lotu-ptaka.jpg" data-index="2" alt="Dworek z lotu ptaka">
     </div>
     <div class="gallery__item">
-        <img src="/images/gallery/amiens-2.jpg" alt="Amiens">
+        <img src="/images/gallery/amiens-2.jpg" data-index="3" alt="Amiens">
     </div>
     <div class="gallery__item">
-        <img src="/images/gallery/kapliczka-2.jpg" alt="Kapliczka">
+        <img src="/images/gallery/kapliczka-2.jpg" data-index="4" alt="Kapliczka">
     </div>
     <div class="gallery__item">
-        <img src="/images/gallery/kswm.jpg" alt="KSWM">
+        <img src="/images/gallery/kswm.jpg" data-index="5" alt="KSWM">
     </div>
     <div class="gallery__item">
-        <img src="/images/gallery/powazki.jpg" alt="Powązki">
+        <img src="/images/gallery/powazki.jpg" data-index="6" alt="Powązki">
     </div>
     <div class="gallery__item">
-        <img src="/images/gallery/san-lorenzo.jpg" alt="San Lorenzo">
+        <img src="/images/gallery/san-lorenzo.jpg" data-index="7" alt="San Lorenzo">
     </div>
     <div class="gallery__item">
-        <img src="/images/gallery/stary-ratusz.jpg" alt="Stary ratusz">
+        <img src="/images/gallery/stary-ratusz.jpg" data-index="8" alt="Stary ratusz">
     </div>
     </div>
 </section>
 <div class="overlay">
     <div class="overlay__inner">
-        <button class="overlay__close">X</button>
+        <a class="overlay__close">X</a>
+        <a class="overlay__prev">&#10094;</a>
+        <a class="overlay__next">&#10095;</a>
         <img>
     </div>
 </div>
 <script>
+    var MIN_SLIDE_INDEX = 1;
+    var MAX_SLIDE_INDEX = 8;
+    var slideIndex = 1;
+
     var gallery = document.querySelector('.gallery');
     var galleryItems = document.querySelectorAll('.gallery__item');
     var overlay = document.querySelector('.overlay');
     var overlayImage = overlay.querySelector('img');
     var overlayClose = overlay.querySelector('.overlay__close');
+    var overlayPrev = overlay.querySelector('.overlay__prev');
+    var overlayNext = overlay.querySelector('.overlay__next');
 
     function handleOverlayOpen(e) {
-        var src = e.currentTarget.querySelector('img').src;
-        overlayImage.src = src;
+        var img = e.currentTarget.querySelector('img');
+        overlayImage.src = img.src;
         overlay.classList.add('overlay--open');
+        slideIndex = Number(img.dataset.index);
     }
 
-    overlayClose.addEventListener('click', function () {
+    overlay.addEventListener('click', function () {
         overlay.classList.remove('overlay--open');
+    });
+
+    overlayClose.addEventListener('click', function (e) {
+        overlay.classList.remove('overlay--open');
+        e.stopPropagation();
+    });
+
+    overlayPrev.addEventListener('click', function (e) {
+        slideIndex = slideIndex === MIN_SLIDE_INDEX ? MAX_SLIDE_INDEX : slideIndex - 1;
+        var src = document.querySelector('[data-index="' + slideIndex + '"]').src;
+        overlayImage.src = src;
+        e.stopPropagation();
+    });
+
+    overlayNext.addEventListener('click', function (e) {
+        slideIndex = slideIndex === MAX_SLIDE_INDEX ? MIN_SLIDE_INDEX : slideIndex + 1;
+        var src = document.querySelector('[data-index="' + slideIndex + '"]').src;
+        overlayImage.src = src;
+        e.stopPropagation();
     });
 
     galleryItems.forEach(item => item.addEventListener('click', handleOverlayOpen))
