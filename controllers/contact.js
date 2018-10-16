@@ -22,11 +22,22 @@ router.get('/', function (req, res, next) {
  * Send email
  */
 router.post('/', function (req, res, next) {
+    const output = `
+        <p>Masz nową prośbę o kontakt</p>
+        <h3>Szczegóły kontaktu</h3>
+        <ul>
+            <li>Imię i nazwisko:${req.body.name}</li>
+            <li>Email:${req.body.email}</li>
+        </ul>
+        <h3>Wiadomość</h3>
+        <p>${req.body.message}</p>
+    `;
+
     const mailOptions = {
-        from: `"${req.body.name}"<${req.body.email}>`,
-        to: process.env.EMAIL_USER, // 'jakub.chelstowski12@wp.pl'
-        subject: 'Wiadomość z portfolio',
-        text: req.body.message
+        from: `"Powiadomienie portfolio" <${process.env.EMAIL_USER}>`,
+        to: process.env.EMAIL_USER,
+        subject: 'Prośba o kontakt z portfolio',
+        html: output
     };
 
     transporter.sendMail(mailOptions, function (error, info) {
@@ -34,6 +45,7 @@ router.post('/', function (req, res, next) {
             console.log(error);
             res.render('contact',  { contact: true, error: true });
         } else {
+            console.log('Message sent: %s', info.messageId);
             res.render('contact',  { contact: true, success: true });
         }
     });
