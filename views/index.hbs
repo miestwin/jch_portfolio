@@ -25,6 +25,50 @@
     object-fit: cover;
 }
 
+.slideshow {
+    position: absolute;
+    z-index: 1050;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.overlay {
+    position: fixed;
+    background-color: rgba(0,0,0,0.7);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1080;
+    display: none;
+}
+
+.overlay--open {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay__inner {
+    background-color: #ffffff;
+    padding: 20px;
+    position: relative;
+}
+
+.overlay__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-size: inherit;
+    cursor: pointer;
+}
+
 @media (min-width: 750px) {
     .gallery {
         grid-gap: 40px;
@@ -32,40 +76,54 @@
 }
 </style>
 <section class="gallery">
-    <a href="/gallery/slides" class="gallery__item">
+    <div class="gallery__item">
         <img src="/images/gallery/citroen-DS.jpg" alt="Citroen DS">
-    </a>
-    <a href="/gallery/slides" class="gallery__item">
-        <img src="/images/gallery/citroen-DS.jpg" alt="Citroen DS">
-    </a>
-    <a href="/gallery/slides" class="gallery__item">
-        <img src="/images/gallery/citroen-DS.jpg" alt="Citroen DS">
-    </a>
-    <a href="/gallery/slides" class="gallery__item">
-        <img src="/images/gallery/citroen-DS.jpg" alt="Citroen DS">
-    </a>
-    <a href="/gallery/slides" class="gallery__item">
-        <img src="/images/gallery/citroen-DS.jpg" alt="Citroen DS">
-    </a>
-    <a href="/gallery/slides" class="gallery__item">
-        <img src="/images/gallery/citroen-DS.jpg" alt="Citroen DS">
-    </a>
-    <a href="/gallery/slides" class="gallery__item">
-        <img src="/images/gallery/citroen-DS.jpg" alt="Citroen DS">
-    </a>
-    <a href="/gallery/slides" class="gallery__item">
-        <img src="/images/gallery/citroen-DS.jpg" alt="Citroen DS">
-    </a>
-    <a href="/gallery/slides" class="gallery__item">
-        <img src="/images/gallery/citroen-DS.jpg" alt="Citroen DS">
-    </a>
-    <a href="/gallery/slides" class="gallery__item">
-        <img src="/images/gallery/citroen-DS.jpg" alt="Citroen DS">
-    </a>
-    <a href="/gallery/slides" class="gallery__item">
-        <img src="/images/gallery/citroen-DS.jpg" alt="Citroen DS">
-    </a>
-    <a href="/gallery/slides" class="gallery__item">
-        <img src="/images/gallery/citroen-DS.jpg" alt="Citroen DS">
-    </a>
+    </div>
+    <div class="gallery__item">
+        <img src="/images/gallery/dworek-z-lotu-ptaka.jpg" alt="Dworek z lotu ptaka">
+    </div>
+    <div class="gallery__item">
+        <img src="/images/gallery/amiens-2.jpg" alt="Amiens">
+    </div>
+    <div class="gallery__item">
+        <img src="/images/gallery/kapliczka-2.jpg" alt="Kapliczka">
+    </div>
+    <div class="gallery__item">
+        <img src="/images/gallery/kswm.jpg" alt="KSWM">
+    </div>
+    <div class="gallery__item">
+        <img src="/images/gallery/powazki.jpg" alt="Powązki">
+    </div>
+    <div class="gallery__item">
+        <img src="/images/gallery/san-lorenzo.jpg" alt="San Lorenzo">
+    </div>
+    <div class="gallery__item">
+        <img src="/images/gallery/stary-ratusz.jpg" alt="Stary ratusz">
+    </div>
+    </div>
 </section>
+<div class="overlay">
+    <div class="overlay__inner">
+        <button class="overlay__close">X</button>
+        <img>
+    </div>
+</div>
+<script>
+    var gallery = document.querySelector('.gallery');
+    var galleryItems = document.querySelectorAll('.gallery__item');
+    var overlay = document.querySelector('.overlay');
+    var overlayImage = overlay.querySelector('img');
+    var overlayClose = overlay.querySelector('.overlay__close');
+
+    function handleOverlayOpen(e) {
+        var src = e.currentTarget.querySelector('img').src;
+        overlayImage.src = src;
+        overlay.classList.add('overlay--open');
+    }
+
+    overlayClose.addEventListener('click', function () {
+        overlay.classList.remove('overlay--open');
+    });
+
+    galleryItems.forEach(item => item.addEventListener('click', handleOverlayOpen))
+</script>
